@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { useTranslations } from "next-intl"
 import Image from "next/image"
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -26,7 +25,6 @@ const generateParticles = () => {
 }
 
 export function Hero() {
-  const t = useTranslations("hero")
   const [mounted, setMounted] = useState(false)
   const particles = generateParticles()
 
@@ -82,7 +80,7 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                {t("greeting")}
+                Hello, I&apos;m
               </motion.p>
             </FadeIn>
 
@@ -94,7 +92,7 @@ export function Hero() {
                 transition={{ delay: 0.5 }}
               >
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
-                  {t("name")}
+                  Ray Zouku
                 </span>
               </motion.h1>
             </FadeIn>
@@ -106,7 +104,7 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
               >
-                {t("title")}
+                Full Stack Developer & Technology Enthusiast
               </motion.h2>
             </FadeIn>
 
@@ -117,7 +115,7 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9 }}
               >
-                {t("description")}
+                Passionate about creating innovative digital solutions with modern technologies. Currently pursuing Information Technology degree while building the future of web development.
               </motion.p>
             </FadeIn>
 
@@ -135,7 +133,7 @@ export function Hero() {
                   onClick={() => scrollToSection("projects")}
                   className="group"
                 >
-                  {t("cta.viewWork")}
+                  View My Work
                   <motion.div
                     className="ml-2"
                     animate={{ x: [0, 4, 0] }}
@@ -151,7 +149,7 @@ export function Hero() {
                   onClick={() => scrollToSection("contact")}
                   className="group hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
                 >
-                  {t("cta.contact")}
+                  Get In Touch
                   <Mail className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                 </Button>
               </motion.div>

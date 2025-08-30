@@ -1,30 +1,28 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useTranslations } from "next-intl"
 import { Calendar, MapPin, GraduationCap, Award } from "lucide-react"
 import { FadeIn } from "@/components/animations/fade-in"
 import { personalInfo, skills } from "@/lib/data/personal"
 import { calculateAge } from "@/lib/utils"
 
 export function About() {
-  const t = useTranslations("about")
   const age = calculateAge(personalInfo.birthDate)
 
   const stats = [
     {
       icon: Calendar,
-      label: t("stats.age"),
+      label: "Age",
       value: `${age} years`,
     },
     {
       icon: GraduationCap,
-      label: t("stats.gpa"),
+      label: "GPA",
       value: personalInfo.gpa.toString(),
     },
     {
       icon: Award,
-      label: t("stats.projects"),
+      label: "Projects",
       value: "15+",
     },
     {
@@ -40,10 +38,10 @@ export function About() {
         <FadeIn>
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
-              {t("title")}
+              About Me
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {t("subtitle")}
+              Get to know me better
             </p>
           </div>
         </FadeIn>
@@ -53,7 +51,7 @@ export function About() {
           <FadeIn delay={0.2}>
             <div className="space-y-4 md:space-y-6">
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                {t("description")}
+                I&apos;m a dedicated Information Technology student with a passion for modern web development and software engineering. My journey in tech started early, and I&apos;ve been continuously learning and building innovative solutions.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
@@ -84,12 +82,12 @@ export function About() {
           {/* Skills Visualization */}
           <FadeIn delay={0.4} direction="right">
             <div className="space-y-6 md:space-y-8">
-              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">{t("skills.title")}</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Skills & Technologies</h3>
               
               {/* Programming Languages */}
               <div>
                 <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4 text-blue-600 dark:text-blue-400">
-                  {t("skills.languages")}
+                  Programming Languages
                 </h4>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
                   {skills.languages.slice(0, 6).map((skill, index) => (
@@ -124,7 +122,7 @@ export function About() {
               {/* Frameworks */}
               <div>
                 <h4 className="text-lg font-semibold mb-4 text-purple-600 dark:text-purple-400">
-                  {t("skills.frameworks")}
+                  Frameworks & Tools
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {skills.frameworks.slice(0, 8).map((framework, index) => (
@@ -158,7 +156,7 @@ export function About() {
                 className="bg-background/50 backdrop-blur-sm rounded-lg p-6 border border-border/50 hover:border-blue-500/50 transition-all duration-300 group"
               >
                 <h4 className="text-lg font-semibold mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {t(`skills.categories.${category}`)}
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
                 </h4>
                 <div className="space-y-2">
                   {techs.slice(0, 4).map((tech) => (

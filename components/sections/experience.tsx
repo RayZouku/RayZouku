@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useTranslations, useLocale } from "next-intl"
 import { GraduationCap, Briefcase, Calendar, Award } from "lucide-react"
 import { FadeIn } from "@/components/animations/fade-in"
 import { education, experience } from "@/lib/data/personal"
@@ -26,8 +25,6 @@ interface TimelineItemData {
 }
 
 export function Experience() {
-  const t = useTranslations("experience")
-  const locale = useLocale()
 
   const TimelineItem = ({ 
     item, 
@@ -66,7 +63,7 @@ export function Experience() {
                   ? 'bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20'
                   : 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20'
               }`}>
-                {item.status === 'current' ? t('current') : t('completed')}
+                {item.status === 'current' ? 'Current' : 'Completed'}
               </div>
             </div>
 
@@ -84,7 +81,7 @@ export function Experience() {
             </div>
 
             <p className="text-muted-foreground mb-4">
-              {item.description[locale as 'en' | 'id']}
+              {item.description.en}
             </p>
 
             {item.achievements && (
@@ -94,7 +91,7 @@ export function Experience() {
                   {item.achievements.map((achievement, i: number) => (
                     <li key={i} className="flex items-start space-x-2 text-sm text-muted-foreground">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0" />
-                      <span>{achievement[locale as 'en' | 'id']}</span>
+                      <span>{achievement.en}</span>
                     </li>
                   ))}
                 </ul>
@@ -122,10 +119,10 @@ export function Experience() {
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              {t("title")}
+              Experience & Education
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("subtitle")}
+              My journey so far
             </p>
           </div>
         </FadeIn>
@@ -136,7 +133,7 @@ export function Experience() {
             <div className="flex items-center justify-center mb-12">
               <div className="flex items-center space-x-3">
                 <GraduationCap className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-                <h3 className="text-2xl font-bold">{t("education")}</h3>
+                <h3 className="text-2xl font-bold">Education</h3>
               </div>
             </div>
           </FadeIn>
@@ -162,7 +159,7 @@ export function Experience() {
             <div className="flex items-center justify-center mb-12">
               <div className="flex items-center space-x-3">
                 <Briefcase className="h-8 w-8 text-purple-600 dark:text-purple-400" />
-                <h3 className="text-2xl font-bold">{t("work")}</h3>
+                <h3 className="text-2xl font-bold">Work Experience</h3>
               </div>
             </div>
           </FadeIn>
@@ -190,10 +187,7 @@ export function Experience() {
                 Looking Forward
               </h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                {locale === 'en' 
-                  ? "Currently focused on completing my Information Technology degree while building innovative projects and seeking opportunities to contribute to meaningful software development initiatives."
-                  : "Saat ini fokus menyelesaikan gelar Teknologi Informasi sambil membangun proyek-proyek inovatif dan mencari peluang untuk berkontribusi pada inisiatif pengembangan perangkat lunak yang bermakna."
-                }
+                Currently focused on completing my Information Technology degree while building innovative projects and seeking opportunities to contribute to meaningful software development initiatives.
               </p>
             </div>
           </div>

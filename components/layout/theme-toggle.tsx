@@ -2,14 +2,12 @@
 
 import { Moon, Sun, Monitor } from "lucide-react"
 import { useTheme } from "next-themes"
-import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react"
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
-  const t = useTranslations("theme")
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -48,11 +46,11 @@ export function ThemeToggle() {
   const getLabel = () => {
     switch (theme) {
       case "light":
-        return t("light")
+        return "Light"
       case "dark":
-        return t("dark")
+        return "Dark"
       default:
-        return t("system")
+        return "System"
     }
   }
 

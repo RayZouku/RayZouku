@@ -1,13 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useTranslations } from "next-intl"
 import { Heart, ArrowUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { personalInfo } from "@/lib/data/personal"
 
 export function Footer() {
-  const t = useTranslations("footer")
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
@@ -33,10 +31,10 @@ export function Footer() {
           {/* Copyright */}
           <div className="text-center">
             <p className="text-muted-foreground text-sm mb-2">
-              {t("copyright")}
+              © 2024 Ray Zouku. All rights reserved.
             </p>
             <div className="flex items-center justify-center space-x-1 text-sm text-muted-foreground">
-              <span>{t("madeWith")}</span>
+              <span>Made with ❤️ using Next.js</span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}

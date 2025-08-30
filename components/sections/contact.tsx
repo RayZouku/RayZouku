@@ -2,14 +2,12 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { useTranslations } from "next-intl"
 import { Mail, MapPin, Github, Linkedin, MessageSquare, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { FadeIn } from "@/components/animations/fade-in"
 import { personalInfo } from "@/lib/data/personal"
 
 export function Contact() {
-  const t = useTranslations("contact")
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,7 +28,7 @@ export function Contact() {
     setIsSubmitting(false)
     
     // In a real app, you would handle the form submission here
-    alert(t("form.success"))
+    alert("Message sent successfully!")
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -43,14 +41,14 @@ export function Contact() {
   const contactInfo = [
     {
       icon: Mail,
-      label: t("email"),
+      label: "Email",
       value: personalInfo.email,
       href: `mailto:${personalInfo.email}`,
       color: "text-blue-600 dark:text-blue-400"
     },
     {
       icon: MapPin,
-      label: t("location"),
+      label: "Location",
       value: personalInfo.location,
       color: "text-green-600 dark:text-green-400"
     },
@@ -76,13 +74,13 @@ export function Contact() {
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              {t("title")}
+              Let&apos;s Work Together
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
-              {t("subtitle")}
+              Get in touch for opportunities
             </p>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              {t("description")}
+              I&apos;m always interested in new opportunities and collaborations. Whether you have a project in mind or just want to connect, feel free to reach out!
             </p>
           </div>
         </FadeIn>
@@ -145,7 +143,7 @@ export function Contact() {
 
               {/* Social Media Links */}
               <div className="pt-8 border-t border-border/50">
-                <h4 className="font-semibold mb-4">{t("social")}</h4>
+                <h4 className="font-semibold mb-4">Social Media</h4>
                 <div className="flex space-x-4">
                   <motion.a
                     href={`https://github.com/${personalInfo.social.github}`}
@@ -194,7 +192,7 @@ export function Contact() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      {t("form.name")}
+                      Your Name
                     </label>
                     <input
                       type="text"
@@ -210,7 +208,7 @@ export function Contact() {
                   
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      {t("form.email")}
+                      Your Email
                     </label>
                     <input
                       type="email"
@@ -227,7 +225,7 @@ export function Contact() {
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                    {t("form.subject")}
+                    Subject
                   </label>
                   <input
                     type="text"
@@ -243,7 +241,7 @@ export function Contact() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    {t("form.message")}
+                    Message
                   </label>
                   <textarea
                     id="message"
@@ -273,12 +271,12 @@ export function Contact() {
                       >
                         ⏳
                       </motion.div>
-                      {t("form.sending")}
+                      Sending...
                     </>
                   ) : (
                     <>
                       <Send className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                      {t("form.send")}
+                      Send Message
                     </>
                   )}
                 </Button>

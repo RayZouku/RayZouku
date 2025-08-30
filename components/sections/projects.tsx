@@ -2,15 +2,12 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { useTranslations, useLocale } from "next-intl"
 import { ExternalLink, Github, Calendar, Tag } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { FadeIn } from "@/components/animations/fade-in"
 import { projects, projectCategories } from "@/lib/data/projects"
 
 export function Projects() {
-  const t = useTranslations("projects")
-  const locale = useLocale()
   const [selectedCategory, setSelectedCategory] = useState("All")
 
   const filteredProjects = projects.filter(project => 
@@ -30,16 +27,29 @@ export function Projects() {
     }
   }
 
+  const getStatusText = (status: string) => {
+    switch (status) {
+      case "completed":
+        return "Completed"
+      case "in-progress":
+        return "In Progress"
+      case "planned":
+        return "Planned"
+      default:
+        return status
+    }
+  }
+
   return (
     <section id="projects" className="py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
-              {t("title")}
+              Featured Projects
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {t("subtitle")}
+              Some of my recent work
             </p>
           </div>
         </FadeIn>
@@ -55,7 +65,7 @@ export function Projects() {
                 onClick={() => setSelectedCategory(category)}
                 className="transition-all duration-300"
               >
-                {category === "All" ? t("categories.all") : category}
+                {category}
               </Button>
             ))}
           </div>
@@ -88,7 +98,7 @@ export function Projects() {
                     {/* Status Badge */}
                     <div className="absolute top-4 right-4">
                       <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getStatusColor(project.status)}`}>
-                        {t(`status.${project.status === 'in-progress' ? 'inProgress' : project.status}`)}
+                        {getStatusText(project.status)}
                       </span>
                     </div>
 
@@ -111,7 +121,7 @@ export function Projects() {
                     </div>
 
                     <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4 line-clamp-2">
-                      {project.description[locale as 'en' | 'id']}
+                      {project.description.en}
                     </p>
 
                     {/* Technologies */}
@@ -158,7 +168,7 @@ export function Projects() {
                             rel="noopener noreferrer"
                           >
                             <Github className="h-4 w-4 mr-2" />
-                            {t("viewCode")}
+                            View Code
                           </a>
                         </Button>
                       )}
@@ -176,7 +186,7 @@ export function Projects() {
                             rel="noopener noreferrer"
                           >
                             <ExternalLink className="h-4 w-4 mr-2" />
-                            {project.links.live ? t("viewProject") : t("liveDemo")}
+                            {project.links.live ? "View Project" : "Live Demo"}
                           </a>
                         </Button>
                       )}
@@ -196,7 +206,7 @@ export function Projects() {
               size="lg"
               className="group"
             >
-              {t("viewAll")}
+              View All Projects
               <motion.div
                 className="ml-2"
                 animate={{ x: [0, 4, 0] }}
