@@ -1,0 +1,110 @@
+{
+  "navigation": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "projects": "Proyek",
+    "experience": "Pengalaman",
+    "contact": "Kontak"
+  },
+  "hero": {
+    "greeting": "Halo, saya",
+    "name": "Ray Zouku",
+    "title": "Full Stack Developer & Penggemar Teknologi",
+    "description": "Bersemangat dalam menciptakan solusi digital inovatif dengan teknologi modern. Saat ini menempuh pendidikan Teknologi Informasi sambil membangun masa depan pengembangan web.",
+    "cta": {
+      "viewWork": "Lihat Karya Saya",
+      "contact": "Hubungi Saya"
+    }
+  },
+  "about": {
+    "title": "Tentang Saya",
+    "subtitle": "Mari mengenal saya lebih dekat",
+    "description": "Saya adalah mahasiswa Teknologi Informasi yang berdedikasi dengan passion dalam pengembangan web modern dan rekayasa perangkat lunak. Perjalanan saya di bidang teknologi dimulai sejak dini, dan saya terus belajar serta membangun solusi inovatif.",
+    "stats": {
+      "age": "Usia",
+      "gpa": "IPK",
+      "projects": "Proyek",
+      "experience": "Pengalaman"
+    },
+    "skills": {
+      "title": "Keahlian & Teknologi",
+      "languages": "Bahasa Pemrograman",
+      "frameworks": "Framework & Tools",
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "mobile": "Mobile",
+        "desktop": "Desktop",
+        "systems": "Sistem",
+        "tooling": "Tooling"
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyek Unggulan",
+    "subtitle": "Beberapa karya terbaru saya",
+    "viewAll": "Lihat Semua Proyek",
+    "viewProject": "Lihat Proyek",
+    "viewCode": "Lihat Kode",
+    "liveDemo": "Demo Langsung",
+    "categories": {
+      "all": "Semua",
+      "web": "Pengembangan Web",
+      "mobile": "Pengembangan Mobile",
+      "desktop": "Aplikasi Desktop",
+      "fullstack": "Full Stack"
+    },
+    "status": {
+      "completed": "Selesai",
+      "inProgress": "Sedang Dikerjakan",
+      "planned": "Direncanakan"
+    }
+  },
+  "experience": {
+    "title": "Pengalaman & Pendidikan",
+    "subtitle": "Perjalanan saya sejauh ini",
+    "education": "Pendidikan",
+    "work": "Pengalaman Kerja",
+    "current": "Saat Ini",
+    "completed": "Selesai"
+  },
+  "contact": {
+    "title": "Mari Bekerja Sama",
+    "subtitle": "Hubungi saya untuk peluang kerjasama",
+    "description": "Saya selalu tertarik dengan peluang dan kolaborasi baru. Baik Anda memiliki proyek dalam pikiran atau hanya ingin terhubung, jangan ragu untuk menghubungi saya!",
+    "email": "Email",
+    "location": "Lokasi",
+    "social": "Media Sosial",
+    "form": {
+      "name": "Nama Anda",
+      "email": "Email Anda",
+      "subject": "Subjek",
+      "message": "Pesan",
+      "send": "Kirim Pesan",
+      "sending": "Mengirim...",
+      "success": "Pesan berhasil dikirim!",
+      "error": "Gagal mengirim pesan. Silakan coba lagi."
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Ray Zouku. Semua hak dilindungi.",
+    "madeWith": "Dibuat dengan ❤️ menggunakan Next.js"
+  },
+  "theme": {
+    "light": "Terang",
+    "dark": "Gelap",
+    "system": "Sistem"
+  },
+  "language": {
+    "english": "Inggris",
+    "indonesian": "Indonesia"
+  },
+  "common": {
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "retry": "Coba Lagi",
+    "close": "Tutup",
+    "open": "Buka",
+    "menu": "Menu"
+  }
+}
